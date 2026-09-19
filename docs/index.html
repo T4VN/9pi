@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hướng dẫn sử dụng — 9pi · Nice Picture · by T4VN</title>
+<meta name="description" content="Hướng dẫn sử dụng chi tiết 9pi Hub, 9pi-Select, 9pi-Color, 9pi-Export — bộ hậu kỳ offline cho studio ảnh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1116;--card:#161a20;--ink:#e8edf2;--mut:#93a1b0;
+  --brand:#3d8fe0;--acc:#2f7fd1;--acc2:#17253a;--line:#262c34}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.7 "Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--brand);text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;background:rgba(14,17,22,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);z-index:10}
+header .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#1e6db4,#155a97);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
+header b{font-size:16px} header small{color:var(--mut);display:block;font-size:11px}
+header .home{margin-left:auto}
+h1{font-size:34px;text-align:center;margin:44px 0 10px}
+.sub{text-align:center;color:var(--mut);margin-bottom:40px}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.tab{padding:10px 24px;border-radius:10px;border:1.5px solid var(--line);cursor:pointer;
+  font-weight:600;color:var(--mut);background:var(--card)}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.doc{display:none;max-width:860px;margin:0 auto}
+.doc.on{display:block}
+.doc h2{color:var(--brand);font-size:22px;margin:34px 0 12px}
+.doc h2:first-child{margin-top:0}
+.doc p{margin-bottom:12px}
+.doc ol,.doc ul{margin:0 0 14px 22px}
+.doc li{margin-bottom:7px}
+.doc img{width:100%;border:1px solid var(--line);border-radius:10px;margin:14px 0}
+.doc .tip{background:var(--acc2);border-left:3px solid var(--acc);border-radius:8px;
+  padding:12px 16px;font-size:13.5px;margin:14px 0}
+.back{text-align:center;margin:50px 0}
+footer{position:relative;overflow:hidden;background:#0a0e14;
+  border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+footer .wm{position:absolute;left:50%;bottom:-0.18em;transform:translateX(-50%);
+  font-size:clamp(140px,26vw,380px);font-weight:800;line-height:1;letter-spacing:-0.02em;
+  background:linear-gradient(180deg,#333d49,#10151c);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  user-select:none;pointer-events:none;white-space:nowrap}
+footer .glow{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(340px circle at var(--gx,50%) var(--gy,60%),
+    rgba(120,180,255,.14), transparent 70%)}
+footer .fin{position:relative;z-index:2;max-width:1080px;margin:0 auto;
+  padding:40px 0 20px;display:flex;gap:14px;justify-content:space-between;
+  flex-wrap:wrap;align-items:center}
+footer .fbot{position:relative;z-index:2;max-width:1080px;margin:0 auto;
+  padding:0 0 30px;display:flex;gap:14px;justify-content:space-between;
+  flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+/* glow hero giong landing */
+body::before{content:'';position:fixed;inset:-10% -5%;pointer-events:none;z-index:0;
+  background:radial-gradient(55% 45% at var(--hx,50%) 0%,
+    rgba(120,180,255,.09), transparent 70%)}
+.wrap{position:relative;z-index:1}
+
+/* ===== T4VN design tokens (dong bo voi T4VN.Website.HomePage) ===== */
+:root{
+  --bg:#fbfaf8; --card:#ffffff; --ink:#17181f; --mut:#1E293B;
+  --brand:#14507f; --acc:#14507f; --acc2:#eef4fa; --line:#e7e3dd;
+  --ok:#197a37; --warn:#b56a05; --err:#b8251e;
+  --side:#14507f; --side2:#1E293B;
+  --input-bg:#ffffff; --thumb-bg:#f4f2ee; --top-bg:#14507f;
+  --font-sans:'Baloo 2','Baloo 2 Fallback',-apple-system,BlinkMacSystemFont,sans-serif;
+  --radius:12px; --radius-lg:20px;
+}
+body{font-family:var(--font-sans);font-size:1.05rem;background:var(--bg);
+  color:var(--ink);-webkit-font-smoothing:antialiased}
+h1,h2,h3,b{letter-spacing:-0.01em}
+.hero{background:linear-gradient(180deg,#eef4fa 0%,var(--bg) 70%)}
+.rays{background:
+  linear-gradient(180deg, rgba(20,80,127,.08), transparent 55%),
+  repeating-linear-gradient(112deg, transparent 0 110px,
+    rgba(20,80,127,.05) 110px 150px)}
+.rays::after{background:radial-gradient(60% 55% at var(--hx,50%) 0%,
+  rgba(20,80,127,.10), transparent 70%)}
+input[type=text],select{background:var(--input-bg);color:var(--ink);
+  border-color:var(--line)}
+.uiBox,.dlgBox{background:#fff;color:var(--ink)}
+.pjRow{background:#fff}
+.pjRow:hover{background:var(--acc2)}
+.pjRow.on{background:var(--acc2)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo">9π</div>
+  <div><b>9pi</b><small>Nice Picture · by T4VN</small></div>
+  <div class="home"><a href="/">← Trang chủ</a></div>
+</div></header>
+
+<div class="wrap">
+  <h1>Hướng dẫn sử dụng</h1>
+  <p class="sub">Chọn app để xem hướng dẫn chi tiết từng bước, kèm hình ảnh minh họa.</p>
+  <div class="tabs">
+    <button class="tab on" onclick="show('hub',this)">9pi Hub</button>
+    <button class="tab" onclick="show('select',this)">9pi-Select</button>
+    <button class="tab" onclick="show('color',this)">9pi-Color</button>
+    <button class="tab" onclick="show('export',this)">9pi-Export</button>
+  </div>
+
+  <div class="doc on" id="d-hub">
+    <h2>9pi Hub — bảng điều khiển trung tâm</h2>
+    <p>Hub là nơi bắt đầu: quản lý project, cài đặt các app con và cấu hình chung.</p>
+    <h2>Tạo project mới</h2>
+    <ol>
+      <li>Ở tab <b>PROJECTS</b>, bấm <b>＋ New Project</b> (góc dưới trái).</li>
+      <li>Nhập <b>tên project</b>, chọn <b>thư mục ảnh</b> (Browse…), đánh dấu
+          <b>Include sub-folders</b> nếu muốn lấy cả thư mục con.</li>
+      <li>Bấm <b>Create</b> — toàn bộ ảnh trong thư mục hiện vào khung bên phải.</li>
+    </ol>
+    <img src="../assets/img/hub-projects.png" alt="Hub Projects">
+    <h2>Quản lý project</h2>
+    <ul>
+      <li>Bấm vào project để mở — ảnh project hiện bên phải (ảnh đã chỉnh màu hiển thị bản đã chỉnh).</li>
+      <li>Nút <b>⋯</b>: Đổi tên / Xoá / Ghim lên đầu.</li>
+      <li>Kéo thả project để sắp xếp thứ tự. Tìm nhanh bằng ô search.</li>
+      <li>Ảnh lỗi đường dẫn hiện viền đứt + nút <b>Cập nhật path</b> (tự tìm file trùng tên trong thư mục bạn chỉ định).</li>
+      <li>Nút <b>✕</b> trên ảnh: bỏ ảnh khỏi project (không xoá file gốc).</li>
+    </ul>
+    <img src="../assets/img/hub-projects.png" alt="">
+    <h2>Cài đặt — ứng dụng &amp; models</h2>
+    <p>Bấm <b>⚙ Settings</b> (góc phải trên): cài sub-app chưa có, tải models AI (~330MB, tải 1 lần),
+       chọn theme System/Dark/Light. Khi đang tải, app khóa thao tác đến khi xong.</p>
+    <img src="../assets/img/hub-settings.png" alt="Settings">
+    <div class="tip">💡 Sau khi cài xong sub-app, chuyển tab tương ứng ở thanh dưới để bắt đầu làm việc.</div>
+  </div>
+
+  <div class="doc" id="d-select">
+    <h2>9pi-Select — lọc chọn ảnh đẹp bằng AI</h2>
+    <p>Chọn thư mục buổi chụp, AI chấm điểm từng ảnh (độ nét, mắt mở, cảm xúc, thẩm mỹ)
+       và đề xuất những tấm đẹp nhất.</p>
+    <h2>Các bước</h2>
+    <ol>
+      <li>Dán đường dẫn thư mục → <b>Analyze</b>. AI chấm điểm (lần đầu tự tải models ~330MB).</li>
+      <li>Kết quả: viền xanh = AI đề xuất. Bấm ảnh để phóng, tick ✓ chọn thủ công.</li>
+      <li>Bộ lọc trái: số lượng cần chọn, sort theo điểm, chỉ hiện đề xuất / chỉ hiện đã chọn.</li>
+      <li>Bấm <b>Export</b> để copy ảnh đã chọn sang 9pi-Color tiếp tục.</li>
+    </ol>
+    <img src="../assets/img/select-results.png" alt="Select kết quả">
+    <div class="tip">💡 Chỉnh "Photos to pick" để AI đề xuất nhiều/ít hơn. Mọi tiêu chí có thể
+      kết hợp: chỉ ảnh có người + mắt mở + cảm xúc vui.</div>
+  </div>
+
+  <div class="doc" id="d-color">
+    <h2>9pi-Color — chỉnh màu hàng loạt</h2>
+    <p>Áp style có sẵn hoặc tự chỉnh 9 tham số màu. Tham số lưu theo từng ảnh.</p>
+    <h2>Các bước</h2>
+    <ol>
+      <li>Chọn ảnh ở dải dưới → chọn <b>style có sẵn</b> (Trắng hồng, Màu phim…) và
+          kéo <b>Cường độ style</b>.</li>
+      <li>Chỉnh tinh bằng 9 thanh: nhiệt độ màu, phơi sáng, tương phản…</li>
+      <li><b>Ctrl+C</b> copy tham số ảnh này → chọn ảnh khác → <b>Ctrl+V</b> dán.
+          <b>Ctrl+A</b> chọn tất cả để dán hàng loạt.</li>
+      <li>Bật <b>⇔ So sánh</b> để xem trước/sau (kéo trượt, 2 bên, trên dưới).</li>
+      <li>Bấm <b>Render ở 9pi-Export</b> để xuất file.</li>
+    </ol>
+    <img src="../assets/img/color-grade.png" alt="Color chỉnh màu">
+    <div class="tip">💡 Mỗi ảnh có tham số riêng — ảnh chưa chỉnh giữ nguyên. Ảnh đã chỉnh có
+      viền cam + badge số tham số ở dải dưới.</div>
+  </div>
+
+  <div class="doc" id="d-export">
+    <h2>9pi-Export — render &amp; xuất file</h2>
+    <p>Bước cuối: render toàn bộ ảnh với tham số màu từng ảnh, xuất JPEG hàng loạt.</p>
+    <h2>Các bước</h2>
+    <ol>
+      <li>Chọn <b>thư mục đích</b> (Browse…).</li>
+      <li>Chọn <b>chất lượng JPEG</b>, <b>cạnh dài tối đa</b> (resize giữ tỉ lệ),
+          <b>tiền tố tên file</b> nếu cần.</li>
+      <li>Tích <b>Chỉ xuất ảnh đã tick chọn</b> nếu muốn xuất một phần.</li>
+      <li>Bấm <b>Export</b> — thanh tiến độ hiện từng ảnh, xong bấm <b>Mở thư mục</b>.</li>
+    </ol>
+    <img src="../assets/img/export-grid.png" alt="Export">
+    <div class="tip">💡 Giữ nguyên EXIF + ICC profile. Ảnh gốc không bao giờ bị ghi đè.
+      Cài đặt export được lưu lại cho lần sau.</div>
+  </div>
+
+  <div class="back"><a href="/">← Về trang chủ 9pi</a></div>
+</div>
+
+<footer id="ft">
+  <div class="wm">9pi</div>
+  <div class="glow"></div>
+  <div class="fin">
+    <span>We craft, We select, We color</span>
+    <span>© 2026 T4VN · Nice Picture</span>
+    <span><a href="https://github.com/T4VN/9pi" target="_blank">GitHub Releases</a> ·
+      <a href="/">Trang chủ</a></span>
+  </div>
+  <div class="fbot">
+    <span>Powered by <b style="color:var(--ink)">T4VN</b></span>
+    <span>Ảnh không rời máy bạn</span>
+  </div>
+</footer>
+
+<script>
+const ft = document.getElementById('ft');
+ft.addEventListener('mousemove', e => {
+  const r = ft.getBoundingClientRect();
+  ft.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+  ft.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+});
+function show(id, btn){
+  document.querySelectorAll('.doc').forEach(d=>d.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('d-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>

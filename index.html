@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>9pi — Nice Picture · by T4VN</title>
-<meta name="description" content="Bộ hậu kỳ offline cho studio: Select lọc ảnh bằng AI, Color chỉnh màu hàng loạt, Export render xuất file. Ảnh không rời máy bạn.">
+<meta name="description" content="Bộ hậu kỳ offline cho studio: Select lọc ảnh bằng AI, Color chỉnh màu, Frame dựng khung, Filter làm đẹp, Relight đổi ánh sáng, Export render xuất file. Ảnh không rời máy bạn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
 <style>
@@ -157,14 +157,21 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
 </div>
 
 <div class="sec" id="pipeline"><div class="wrap">
-  <h2>Quy trình 4 bước</h2>
+  <h2>Quy trình 6 bước</h2>
   <p class="sub">Từ 700 ảnh raw buổi chụp tới bộ ảnh hoàn chỉnh chỉ trong vài phút.</p>
   <div class="pipe">
     <div class="st"><b>1 · Select</b><span>AI lọc ảnh nét, mắt mở, cảm xúc đẹp</span></div>
     <div class="ar">→</div>
     <div class="st"><b>2 · Color</b><span>chỉnh màu, học gu riêng của studio</span></div>
     <div class="ar">→</div>
-    <div class="st"><b>3 · Export</b><span>render đúng tham số từng ảnh, xuất hàng loạt</span></div>
+    <div class="st"><b>3 · Frame</b><span>crop, xoay, dựng khung bằng kéo thả</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>4 · Filter</b><span>làm đẹp da & khuôn mặt tự nhiên</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>5 · Relight</b><span>đổi hướng & không khí ánh sáng bằng AI</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>6 · Export</b><span>render đúng tham số từng ảnh, xuất hàng loạt</span></div>
+  </div>
   </div>
   <div class="feats">
     <div class="ft"><b>🔒 Riêng tư tuyệt đối</b><br>Ảnh xử lý 100% trên máy, không upload</div>
@@ -191,12 +198,15 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
     <div class="col">
       <div class="lg"><div class="logo">9π</div><b>9pi</b></div>
       <p>Bộ hậu kỳ offline cho studio: Select lọc bằng AI, Color chỉnh màu
-         theo gu riêng, Export render xuất file. Ảnh không rời máy bạn.</p>
+         theo gu riêng, Frame dựng khung, Filter làm đẹp, Relight đổi ánh sáng,
+         Export render xuất file. Ảnh không rời máy bạn.</p>
     </div>
     <div class="col">
       <b>Ứng dụng</b>
       <a href="#apps">9pi-Select</a><a href="#apps">9pi-Color</a>
-      <a href="#apps">9pi-Export</a><a href="#dl">Tải 9pi Hub</a>
+      <a href="#apps">9pi-Frame</a><a href="#apps">9pi-Filter</a>
+      <a href="#apps">9pi-Relight</a><a href="#apps">9pi-Export</a>
+      <a href="#dl">Tải 9pi Hub</a>
     </div>
     <div class="col">
       <b>Liên kết</b>
@@ -231,6 +241,9 @@ hero.addEventListener('mousemove', e => {
 const APPS=[
  {n:'Select',d:'Lọc chọn ảnh đẹp tự động bằng AI: nét, mắt mở, cảm xúc, thẩm mỹ.',k:'SELECT'},
  {n:'Color',d:'Chỉnh màu hàng loạt: style có sẵn, học gu màu riêng của studio.',k:'COLOR'},
+ {n:'Frame',d:'Dựng khung: crop, xoay, lật — kéo thả trực tiếp trên ảnh preview.',k:'FRAME'},
+ {n:'Filter',d:'Làm đẹp da & khuôn mặt: mịn da, trang điểm theo vùng AI nhận diện.',k:'FILTER'},
+ {n:'Relight',d:'Đổi hướng & không khí ánh sáng bằng AI: ảnh ngược thành ảnh ngắm.',k:'RELIGHT'},
  {n:'Export',d:'Render đúng tham số từng ảnh, xuất JPEG hàng loạt với resize/prefix.',k:'EXPORT'},
  {n:'Hub',d:'Bảng điều khiển: quản lý project, cài app, cập nhật — mọi thứ tại một chỗ.',k:'HUB'}];
 document.getElementById('appGrid').innerHTML=APPS.map(a=>

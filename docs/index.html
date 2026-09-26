@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hướng dẫn sử dụng — 9pi · Nice Picture · by T4VN</title>
-<meta name="description" content="Hướng dẫn sử dụng chi tiết 9pi Hub, 9pi-Select, 9pi-Color, 9pi-Export — bộ hậu kỳ offline cho studio ảnh.">
+<meta name="description" content="Hướng dẫn sử dụng 9pi Hub, 9pi-Select, 9pi-Color, 9pi-Frame, 9pi-Filter, 9pi-Relight, 9pi-Export — bộ hậu kỳ offline cho studio ảnh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
 <style>
@@ -102,12 +102,17 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
     <button class="tab on" onclick="show('hub',this)">9pi Hub</button>
     <button class="tab" onclick="show('select',this)">9pi-Select</button>
     <button class="tab" onclick="show('color',this)">9pi-Color</button>
+    <button class="tab" onclick="show('frame',this)">9pi-Frame</button>
+    <button class="tab" onclick="show('filter',this)">9pi-Filter</button>
+    <button class="tab" onclick="show('relight',this)">9pi-Relight</button>
     <button class="tab" onclick="show('export',this)">9pi-Export</button>
   </div>
 
   <div class="doc on" id="d-hub">
     <h2>9pi Hub — bảng điều khiển trung tâm</h2>
-    <p>Hub là nơi bắt đầu: quản lý project, cài đặt các app con và cấu hình chung.</p>
+    <p>Hub là nơi bắt đầu: quản lý project, cài đặt các app con và cấu hình chung.
+       Lần đầu mở, Hub tự cài 2 app mặc định (<b>9pi-Select</b> và <b>9pi-Export</b>)
+       ngay ở màn hình loading — xong mới vào giao diện chính.</p>
     <h2>Tạo project mới</h2>
     <ol>
       <li>Ở tab <b>PROJECTS</b>, bấm <b>＋ New Project</b> (góc dưới trái).</li>
@@ -116,20 +121,35 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
       <li>Bấm <b>Create</b> — toàn bộ ảnh trong thư mục hiện vào khung bên phải.</li>
     </ol>
     <img src="../assets/img/hub-projects.png" alt="Hub Projects">
+    <h2>Thêm ảnh vào project</h2>
+    <p>Nút <b>⬇ Thêm ảnh</b> nằm giữa, ngay trên lưới ảnh (project rỗng cũng có
+       nút riêng ở giữa màn hình). Bấm chọn một trong hai cách:</p>
+    <ul>
+      <li><b>🖼 Chọn từng ảnh…</b> — chọn nhiều file ảnh cùng lúc (Ctrl+click).</li>
+      <li><b>📁 Chọn thư mục…</b> — nhập cả thư mục (kèm thư mục con), tự bỏ qua
+          ảnh đã có trong project.</li>
+    </ul>
     <h2>Quản lý project</h2>
     <ul>
       <li>Bấm vào project để mở — ảnh project hiện bên phải (ảnh đã chỉnh màu hiển thị bản đã chỉnh).</li>
-      <li>Nút <b>⋯</b>: Đổi tên / Xoá / Ghim lên đầu.</li>
+      <li>Nút <b>⋯</b>: Thêm ảnh / Pin / Đổi tên / Xoá. Project đang ghim có
+          <b>icon ghim màu cam</b> bên trái tên và luôn nằm đầu danh sách.</li>
       <li>Kéo thả project để sắp xếp thứ tự. Tìm nhanh bằng ô search.</li>
       <li>Ảnh lỗi đường dẫn hiện viền đứt + nút <b>Cập nhật path</b> (tự tìm file trùng tên trong thư mục bạn chỉ định).</li>
       <li>Nút <b>✕</b> trên ảnh: bỏ ảnh khỏi project (không xoá file gốc).</li>
+      <li><b>Responsive</b>: thu nhỏ cửa sổ — sidebar tự thu gọn (nút ❮/❯ mở lại),
+          thanh công cụ tự gọn, mọi nút vẫn thao tác được.</li>
     </ul>
-    <img src="../assets/img/hub-projects.png" alt="">
-    <h2>Cài đặt — ứng dụng &amp; models</h2>
-    <p>Bấm <b>⚙ Settings</b> (góc phải trên): cài sub-app chưa có, tải models AI (~330MB, tải 1 lần),
-       chọn theme System/Dark/Light. Khi đang tải, app khóa thao tác đến khi xong.</p>
+    <h2>Cài đặt — ứng dụng &amp; models &amp; cập nhật</h2>
+    <p>Bấm <b>⚙ Settings</b> (góc phải trên): cài sub-app chưa có, tải models AI
+       (~330MB, tải 1 lần), chọn ngôn ngữ, theme System/Dark/Light. Khi đang tải,
+       app khóa thao tác đến khi xong.</p>
+    <p><b>Kiểm tra cập nhật</b>: nếu có phiên bản mới, hộp thoại hiện kèm
+       <b>nút tải file cài đặt đúng hệ điều hành</b> (Windows/macOS/Linux) — tải về
+       thư mục Downloads và tự mở thư mục chứa file để bạn chạy cài đặt.</p>
     <img src="../assets/img/hub-settings.png" alt="Settings">
-    <div class="tip">💡 Sau khi cài xong sub-app, chuyển tab tương ứng ở thanh dưới để bắt đầu làm việc.</div>
+    <div class="tip">💡 Màn hình loading dạng dialog: không thể thu phóng hay tắt nhầm
+       trong lúc khởi động — nó tự đóng khi app đã sẵn sàng và vào thẳng tab PROJECTS.</div>
   </div>
 
   <div class="doc" id="d-select">
@@ -159,11 +179,68 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
       <li><b>Ctrl+C</b> copy tham số ảnh này → chọn ảnh khác → <b>Ctrl+V</b> dán.
           <b>Ctrl+A</b> chọn tất cả để dán hàng loạt.</li>
       <li>Bật <b>⇔ So sánh</b> để xem trước/sau (kéo trượt, 2 bên, trên dưới).</li>
+      <li>Bật <b>Chỉ ảnh đã chọn ở Select</b> (góc phải dưới) để chỉ làm việc với
+          ảnh AI đã chọn.</li>
       <li>Bấm <b>Render ở 9pi-Export</b> để xuất file.</li>
     </ol>
     <img src="../assets/img/color-grade.png" alt="Color chỉnh màu">
     <div class="tip">💡 Mỗi ảnh có tham số riêng — ảnh chưa chỉnh giữ nguyên. Ảnh đã chỉnh có
       viền cam + badge số tham số ở dải dưới.</div>
+  </div>
+
+  <div class="doc" id="d-frame">
+    <h2>9pi-Frame — dựng khung &amp; transform</h2>
+    <p>Crop, xoay, lật và căn khung ảnh trực quan bằng kéo thả ngay trên ảnh preview.</p>
+    <h2>Các bước</h2>
+    <ol>
+      <li>Chọn ảnh ở dải dưới → <b>kéo thả trực tiếp</b> trên ảnh để dịch vị trí
+          (con trỏ hình bàn tay), <b>lăn chuột</b> để thu phóng.</li>
+      <li>Xoay nhanh <b>⟲/⟳ 90°</b>, <b>Flip H/V</b>; chỉnh tinh bằng thanh
+          Zoom / Position X/Y / Rotation.</li>
+      <li>Crop: chọn <b>tỉ lệ khung có sẵn</b> (1:1, 4:5 Instagram…) hoặc kéo 4 thanh
+          crop tự do.</li>
+      <li><b>Apply to all</b> áp tham số hiện tại cho mọi ảnh; <b>Clear this photo</b>
+          reset ảnh đang chọn.</li>
+    </ol>
+    <img src="../assets/img/frame.png" alt="Frame dựng khung">
+    <div class="tip">💡 Mọi thay đổi hiển thị tức thì trên preview và tự lưu theo từng ảnh
+      trong project.</div>
+  </div>
+
+  <div class="doc" id="d-filter">
+    <h2>9pi-Filter — làm đẹp da &amp; khuôn mặt</h2>
+    <p>Làm mịn da, sáng da, hồng cheeks; trang điểm theo vùng khuôn mặt AI tự nhận diện.</p>
+    <h2>Các bước</h2>
+    <ol>
+      <li>Chọn ảnh ở dải dưới → kéo <b>Smooth / Brighten / Rosy skin</b> cho làn da.</li>
+      <li><b>Face makeup</b>: chọn màu son/má/eyeshadow rồi kéo cường độ — AI tự tìm
+          vùng môi, má, mắt.</li>
+      <li><b>Chi tiết</b>: trắng răng, nét mặt, nét tổng thể; chọn độ phân giải
+          upscale khi render.</li>
+      <li>Bật <b>⇔ So sánh</b> để xem trước/sau. <b>Apply to all</b> cho cả project.</li>
+    </ol>
+    <img src="../assets/img/filter.png" alt="Filter làm đẹp">
+    <div class="tip">💡 Vùng makeup theo khuôn mặt phát hiện tự động — ảnh không có người
+      vẫn dùng được các thanh da &amp; chi tiết.</div>
+  </div>
+
+  <div class="doc" id="d-relight">
+    <h2>9pi-Relight — đổi hướng &amp; không khí ánh sáng</h2>
+    <p>AI vẽ lại ánh sáng theo hướng bạn chọn, kèm mô tả không khí bằng lời —
+       ảnh chụp ngược, thiếu sáng có thể "đổi mặt trời" được.</p>
+    <h2>Các bước</h2>
+    <ol>
+      <li>Chọn ảnh ở dải dưới.</li>
+      <li>Chọn <b>hướng sáng</b>: From left / right / top / below.</li>
+      <li>(Tuỳ chọn) gõ <b>không khí ánh sáng</b> hoặc bấm 1 quick prompt:
+          "sunshine from window", "neon light, city", "golden time"…</li>
+      <li>Chọn <b>số kết quả mỗi lần chạy</b>, seed (để trống = ngẫu nhiên),
+          rồi bấm <b>CREATE LIGHT</b>.</li>
+      <li>Kết quả hiện bên phải — dùng <b>⇔ So sánh</b> để đối chiếu bản gốc.</li>
+    </ol>
+    <img src="../assets/img/relight.png" alt="Relight đổi ánh sáng">
+    <div class="tip">💡 Chạy trên GPU NVIDIA nhanh gấp nhiều lần; không có GPU vẫn chạy được
+      (vài phút/ảnh). Chọn thiết bị ở ô DEVICE phía dưới.</div>
   </div>
 
   <div class="doc" id="d-export">

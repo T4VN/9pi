@@ -160,7 +160,7 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
   <h2>Quy trình 6 bước</h2>
   <p class="sub">Từ 700 ảnh raw buổi chụp tới bộ ảnh hoàn chỉnh chỉ trong vài phút.</p>
   <div class="pipe">
-    <div class="st"><b>1 · Select</b><span>AI lọc ảnh nét, mắt mở, cảm xúc đẹp</span></div>
+    <div class="st"><b>1 · Select</b><span>AI lọc ảnh nét, mắt mở, cảm xúc đẹp — RAW hay JPG</span></div>
     <div class="ar">→</div>
     <div class="st"><b>2 · Color</b><span>chỉnh màu, học gu riêng của studio</span></div>
     <div class="ar">→</div>
@@ -189,6 +189,44 @@ input[type=text],select{background:var(--input-bg);color:var(--ink);
   <p style="margin-top:16px;font-size:12.5px;color:var(--mut)">
     <a href="https://github.com/T4VN/9pi/releases">Toàn bộ bản phát hành</a> ·
     <a href="https://github.com/T4VN/9pi.Src" target="_blank">Mã nguồn</a></p>
+</div></div>
+
+<div class="wrap"><div class="sec" id="libs">
+  <h2>Thư viện mã nguồn mở</h2>
+  <p class="sub">9pi dựa trên các thành phần mở sau — thông tin giấy phép
+     được lưu trữ tại đây theo yêu cầu của các giấy phép GNU LGPL/GPL.</p>
+  <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+    <div style="display:flex;gap:10px;background:var(--card);padding:11px 16px;font-weight:700;font-size:13.5px;border-bottom:1px solid var(--line)">
+      <span style="flex:1.2">Thành phần</span>
+      <span style="flex:1.6">Dùng để</span>
+      <span style="flex:1">Giấy phép</span>
+    </div>
+    <div style="display:flex;gap:10px;padding:11px 16px;font-size:13px;border-bottom:1px solid var(--line)">
+      <span style="flex:1.2">ONNX Runtime (Microsoft)</span>
+      <span style="flex:1.6">Chạy mô hình AI trên máy bạn</span>
+      <span style="flex:1">MIT</span>
+    </div>
+    <div style="display:flex;gap:10px;padding:11px 16px;font-size:13px;border-bottom:1px solid var(--line)">
+      <span style="flex:1.2">LibRaw, rawpy</span>
+      <span style="flex:1.6">Đọc file RAW máy ảnh (ARW, CR2, NEF, DNG…)</span>
+      <span style="flex:1">LGPL-2.1 (hoặc CDDL 1.0), ISC</span>
+    </div>
+    <div style="display:flex;gap:10px;padding:11px 16px;font-size:13px;border-bottom:1px solid var(--line)">
+      <span style="flex:1.2">libheif, libde265, x265 (qua pillow-heif)</span>
+      <span style="flex:1.6">Đọc ảnh HEIC/HEIF của iPhone</span>
+      <span style="flex:1">LGPL-3.0</span>
+    </div>
+    <div style="display:flex;gap:10px;padding:11px 16px;font-size:13px;border-bottom:1px solid var(--line)">
+      <span style="flex:1.2">libavif, dav1d, libaom (plugin AVIF của Pillow)</span>
+      <span style="flex:1.6">Đọc/ghi ảnh AVIF</span>
+      <span style="flex:1">BSD-2-Clause</span>
+    </div>
+    <div style="display:flex;gap:10px;padding:11px 16px;font-size:13px">
+      <span style="flex:1.2">OpenCV, Pillow, MediaPipe</span>
+      <span style="flex:1.6">Xử lý ảnh, nhận diện khuôn mặt</span>
+      <span style="flex:1">Apache-2.0, MIT-CMU</span>
+    </div>
+  </div>
 </div></div>
 
 <footer id="ft">
@@ -239,7 +277,7 @@ hero.addEventListener('mousemove', e => {
 });
 
 const APPS=[
- {n:'Select',d:'Lọc chọn ảnh đẹp tự động bằng AI: nét, mắt mở, cảm xúc, thẩm mỹ.',k:'SELECT'},
+ {n:'Select',d:'Lọc chọn ảnh đẹp tự động bằng AI: nét, mắt mở, cảm xúc, thẩm mỹ. Nhận cả RAW máy ảnh (ARW, CR2, NEF, DNG…).',k:'SELECT'},
  {n:'Color',d:'Chỉnh màu hàng loạt: style có sẵn, học gu màu riêng của studio.',k:'COLOR'},
  {n:'Frame',d:'Dựng khung: crop, xoay, lật — kéo thả trực tiếp trên ảnh preview.',k:'FRAME'},
  {n:'Filter',d:'Làm đẹp da & khuôn mặt: mịn da, trang điểm theo vùng AI nhận diện.',k:'FILTER'},
